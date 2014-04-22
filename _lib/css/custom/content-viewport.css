@@ -29,7 +29,7 @@
 .contentViewport table:first-child, .contentViewport table.first-child { margin-top:0; }
 
 /* body */
-body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-size:16px; font-weight:300; line-height:26px; }
+body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-size:16px; font-weight:400; line-height:26px; }
 
 
 /* ==========================================================================
@@ -37,12 +37,12 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
    ========================================================================== */
 
 /* styles */
-.contentViewport h1, .h1 { color:#333; font-size:42px; line-height:54px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px 24px 0px; }
-.contentViewport h2, .h2 { color:#333; font-size:36px; line-height:45px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }
-.contentViewport h3, .h3 { color:#333; font-size:22px; line-height:34px; font-weight:400; font-style:normal; margin:0!important; padding:16px 0px  8px 0px; }  
-.contentViewport h4, .h4 { color:#333; font-size:18px; line-height:26px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
-.contentViewport h5, .h5 { color:#00aab8; font-size:16px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding: 8px 0px  0px 0px; }  
-.contentViewport p,  .p  { color:#333; font-size:15px; line-height:24px; font-weight:400; font-style:normal; margin:0!important; padding: 0px 0px  1em 0px; }
+.contentViewport h1, .h1 { color:#333333; font-size:42px; line-height:54px; font-weight:400; font-style:normal; margin:0!important; padding:  0px 0px   1em 0px; }
+.contentViewport h2, .h2 { color:#333333; font-size:36px; line-height:45px; font-weight:700; font-style:normal; margin:0!important; padding:  1em 0px 0.5em 0px; }
+.contentViewport h3, .h3 { color:#ffc423; font-size:22px; line-height:34px; font-weight:700; font-style:normal; margin:0!important; padding:  1em 0px 0.5em 0px; }  
+.contentViewport h4, .h4 { color:#ffc423; font-size:18px; line-height:26px; font-weight:700; font-style:normal; margin:0!important; padding:0.5em 0px   0px 0px; }  
+.contentViewport h5, .h5 { color:#666666; font-size:18px; line-height:26px; font-weight:700; font-style:normal; margin:0!important; padding:0.5em 0px   0px 0px; }  
+.contentViewport p,  .p  { color:#666666; font-size:18px; line-height:26px; font-weight:400; font-style:normal; margin:0!important; padding:  0px 0px 0.5em 0px; }
 
 /* fonts */ 
 .contentViewport h1, .h1,
@@ -58,16 +58,10 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
    ========================================================================== */
    
 /* default */
-.contentViewport a 			{ color:#00aab8; text-decoration:none; }
+.contentViewport a { color:#39bce2; text-decoration:none; }
 .contentViewport a:hover,
 .contentViewport a:focus,
-.contentViewport a:active 	{ color:#00aab8; text-decoration:underline; }
-
-/* dark */
-.contentViewport a.dark 		{ color:#333; text-decoration:none; }
-.contentViewport a.dark:hover,
-.contentViewport a.dark:focus,
-.contentViewport a.dark:active 	{ color:#333; text-decoration:underline; }
+.contentViewport a:active { color:#39bce2; text-decoration:underline; }
 
 
 /* ==========================================================================
@@ -79,17 +73,17 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 
 /* container */
 .contentViewport ul,
-.contentViewport ol { margin:0 0 0 12px; padding:8px 0 16px 0; list-style:none; }
+.contentViewport ol { margin:0 0 0 12px; padding:9px 0 18px 0; list-style:none; }
 .contentViewport ol { margin-left:30px; list-style-type:decimal; list-style-position:outside; }
 
 /* item */
-.contentViewport li 			{ color:#333; font-size:15px; line-height:24px; margin:0 0 0 0; }
+.contentViewport li { color:#666; font-size:18px; line-height:26px; margin:0 0 0 0; }
 .contentViewport li.first-child { margin-top:0; }
 .contentViewport li:first-child { margin-top:0; }
 
 /* item bullet */
-.contentViewport li 	{ padding:0 0 0 18px; background:url(../../img/blt-list-lv1.png) 1px 10px no-repeat; }
-.contentViewport ol li 	{ padding:0 0 0 0; background:none; }
+.contentViewport li { padding:0 0 0 18px; background:url(../../img/blt-list-lv1.png) 0px 12px no-repeat; }
+.contentViewport ol li { padding:0 0 0 0; background:none; }
 
 /* -------------------------------------------------------------------------- */
 /* lv2 */
@@ -106,8 +100,8 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 .contentViewport li li:first-child { margin-top:0px; }
 
 /* item bullet */
-.contentViewport li li 		{ padding:0 0 0 18px; background:url(../../img/blt-list-lv2.png) 1px 10px no-repeat; }
-.contentViewport li ol li 	{ padding:0 0 0 0; background:none; }
+.contentViewport li li { padding:0 0 0 18px; background:url(../../img/blt-list-lv2.png) 0px 12px no-repeat; }
+.contentViewport li ol li { padding:0 0 0 0; background:none; }
 
 /* -------------------------------------------------------------------------- */
 /* extensions */
@@ -119,25 +113,25 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 
 /* -------------------------------------------------------------------------- */
 /* IE fix */
-.ie7 .contentViewport ul 		{ margin-left:16px; }
-.ie7 .contentViewport ol 		{ margin-left:22px; }
-.ie7 .contentViewport ul li 	{ list-style:disc; background:none; padding-left:6px; } 
-.ie7 .contentViewport ol li 	{ list-style:decimal; }
+.ie7 .contentViewport ul 				{ margin-left:16px; }
+.ie7 .contentViewport ol 				{ margin-left:22px; }
+.ie7 .contentViewport ul li 		{ list-style:disc; background:none; padding-left:6px; } 
+.ie7 .contentViewport ol li 		{ list-style:decimal; }
 .ie7 .contentViewport ol ul li 	{ list-style:disc; }
 .ie7 .contentViewport ol ol li 	{ list-style:lower-alpha; } 
-.ie7 .contentViewport li ul 	{ margin-left:16px; }
-.ie7 .contentViewport li ol 	{ margin-left:22px; }
+.ie7 .contentViewport li ul 		{ margin-left:16px; }
+.ie7 .contentViewport li ol 		{ margin-left:22px; }
 .ie7 .contentViewport li ul li 	{ padding-left:6px; }
 .ie7 .contentViewport li ol li 	{ padding-left:0; }
 
-.ie6 .contentViewport ul 		{ margin-left:16px; }
-.ie6 .contentViewport ol 		{ margin-left:22px; }
-.ie6 .contentViewport ul li 	{ list-style:disc; background:none; padding-left:6px; } 
-.ie6 .contentViewport ol li 	{ list-style:decimal; }
+.ie6 .contentViewport ul 				{ margin-left:16px; }
+.ie6 .contentViewport ol 				{ margin-left:22px; }
+.ie6 .contentViewport ul li 		{ list-style:disc; background:none; padding-left:6px; } 
+.ie6 .contentViewport ol li 		{ list-style:decimal; }
 .ie6 .contentViewport ol ul li 	{ list-style:disc; }
 .ie6 .contentViewport ol ol li 	{ list-style:lower-alpha; } 
-.ie6 .contentViewport li ul		{ margin-left:16px; }
-.ie6 .contentViewport li ol 	{ margin-left:22px; }
+.ie6 .contentViewport li ul			{ margin-left:16px; }
+.ie6 .contentViewport li ol 		{ margin-left:22px; }
 .ie6 .contentViewport li ul li 	{ padding-left:6px; }
 .ie6 .contentViewport li ol li 	{ padding-left:0; }
 
@@ -146,7 +140,7 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
    style - LEADERTEXT
    ========================================================================== */
 .contentViewport .leaderText  { 
-	color:#00aab8; font-size:18px; line-height:24px; font-weight:700; font-style:normal; margin:0!important; padding:0px 0px 1em 0px; }
+	color:#39bce2; font-size:22px; line-height:28px; font-weight:900; font-style:normal; margin:0!important; padding:0px 0px 0.5em 0px; }
 
 
 /* ==========================================================================
