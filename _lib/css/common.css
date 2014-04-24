@@ -139,6 +139,24 @@ body.ps {
 			#footer 		> .padder,
 			.section 		> .padder {
 				min-width:0px; max-width:960px; }
+				
+			/* padders.wide */
+			#header 		> .padder.wide,
+			#banner 		> .padder.wide,
+			#content 		> .padder.wide,
+			#megafooter > .padder.wide,
+			#footer 		> .padder.wide,
+			.section 		> .padder.wide {
+				max-width:1080px; }
+				
+			/* padders.narrow */
+			#header 		> .padder.narrow,
+			#banner 		> .padder.narrow,
+			#content 		> .padder.narrow,
+			#megafooter > .padder.narrow,
+			#footer 		> .padder.narrow,
+			.section 		> .padder.narrow {
+				max-width:750px; }
 
 /* oldie fix */
 .oldie body.ps { padding:30px 0; }
@@ -569,14 +587,6 @@ html, body { min-height:100%; }
 		
 		/* oldie fix */
 		.oldie #banner .headline { width:92%; padding:0 4%; }
-		
-/* -------------------------------------------------------------------------- */
-/* banner.slideshow */
-#banner.slideshow { padding-top:40%;/*480/1200*/ }
-	
-	/* slide (override cycle) */
-	#banner.slideshow .bgImg { 
-		top:0!important; left:0!important; width:100%!important; height:auto!important; }
 
 /* -------------------------------------------------------------------------- */
 /* responsive */
@@ -888,6 +898,17 @@ html, body { min-height:100%; }
 
 
 /* ==========================================================================
+   structure - SECTION
+   ========================================================================== */
+
+/* extend */
+.section.white 	{ background:#fff; }
+.section.blue 	{ background:#09a3cf; }
+.section.yellow { background:#ffc423; }
+.section.cream  { background:#f6f5ee; }
+
+
+/* ==========================================================================
    structure - COLUMNS
    ========================================================================== */
 
@@ -984,6 +1005,36 @@ html, body { min-height:100%; }
 	.formView .col3Important.col3a 	{ float:left; clear:left; }
 	.formView .col3Important.col3b 	{ float:left; clear:none; margin-left:5.6%;  }
 	.formView .col3Important.col3c 	{ float:right; clear:right; }
+
+}
+
+
+/* ==========================================================================
+   structure - ITEMS GRID
+   ========================================================================== */
+
+/* common */
+.g3,
+.g4 { float:left; }
+
+/* custom */
+.g3 { width:29.33%; margin:0 2%; }
+.g4 { width:21.00%; margin:0 2%; }
+
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:800px) {
+
+	/* g4 -> 2 */
+	.g4 { width:46.00%; }
+	.g4:nth-child(2n+1) { clear:left; }
+
+}
+@media only screen and (max-width:500px) {
+
+	/* g3,4 -> 1 */
+	.g3,
+	.g4 { width:90.00%; margin:0 5%; }
 
 }
 
@@ -1263,10 +1314,73 @@ html, body { min-height:100%; }
    common - ITEMS
    ========================================================================== */
 
+/* -------------------------------------------------------------------------- */
+/* prototype */
+.item { 
+	display:block; position:relative; margin-top:2em; margin-bottom:2em;
+	font-size:14px; }
 
+	/* -------------------------------------------------------------------------- */
+	/* contents */
+	
+	/* imgThumb */
+	.item .imgThumb { 
+		display:block; width:100%; height:auto; margin:0 0 1.4em 0; padding:0;
+		/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
+		/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box; }
+	
+	/* tag */
+	.item .imgThumb + .tag { 
+		display:inline-block; position:absolute; top:0; left:0; margin:8px 0 0 -6px; padding:0 11px; overflow:hidden;
+		color:#fff; white-space:nowrap; text-overflow:ellipsis; text-transform:uppercase;
+		font-size:12px; line-height:2em; font-weight:900; 
+		/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
+		/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box; }
+	.item .imgThumb + .tag.grn { background:#9dba32; }
+	.item .imgThumb + .tag.red { background:#eb6b56; }
+	.item .imgThumb + .tag.ppl { background:#c85599; }
+	
+	/* title */
+	.item .title { margin:0 0 0.4em 0; color:#666; font-size:1.3em; line-height:1.17em; }
+	
+	/* date */
+	.item .date { margin:0 0 0.8em 0; color:#999; font-size:1em; line-height:1em; text-transform:uppercase; }
+	
+	/* p */
+	.item .desc { margin:0 0 0.8em 0; color:#666; font-size:1.14em; line-height:1.3em; }
+	
+	/* links */
+	.item .links { margin:0 0 0.8em 0; }
 
-/* item stuff ... */
+/* -------------------------------------------------------------------------- */
+/* extends */
+a.item,
+a.item:visited 				{ color:#666; text-decoration:none; }
+a.item:hover .title,
+a.item:focus .title,
+a.item:active .title 	{ color:#666; text-decoration:underline; }
 
+.item.news { margin-top:0; }
+
+.item.action { margin-top:5.5em; margin-bottom:3.5em; }
+.item.action .imgThumb { margin-bottom:1.8em; }
+
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:500px) {
+	
+	/* add sep */
+	.item { padding-top:1em; border-top:1px solid #ccc; }
+	
+	/* remove img and tag */
+	.item .imgThumb,
+	.item .imgThumb + .tag { display:none; }
+	
+	/* remove vertical gaps */
+	.item.action { margin-top:0; margin-bottom:1em; }
+	.item.action:first-child { border-top:none; }
+
+}
 
 
 /* ==========================================================================
@@ -1384,6 +1498,28 @@ html, body { min-height:100%; }
 	.btnIcon .icon:before { 
 		font-size:21px; line-height:45px; }
 		
+/* -------------------------------------------------------------------------- */
+/* btnBoxLrg */
+.btnBoxLrg { 
+	display:inline-block; width:auto; height:auto; margin:0 3px 6px 3px; padding:0 1.5em; overflow:hidden;
+	color:#fff; background:#09a3cf; white-space:nowrap; txxt-overflow:ellipsis;
+	font-size:17px; line-height:3.8em; font-weight:900; text-align:center; vertical-align:middle;
+	text-decoration:none!important; outline:0 none!important; cursor:pointer;
+	/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
+	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box;
+	/*transition*/
+	/*-webkit-transform:translate3d(0,0,0);*/
+	-webkit-transition:background-color 0.3s ease-in-out;
+	-moz-transition:background-color 0.3s ease-in-out;
+	-o-transition:background-color 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out; }
+
+/* interaction */
+.btnBoxLrg:hover,
+.btnBoxLrg:focus,
+.btnBoxLrg:active { 
+	color:#fff; background:#39bce2; } 
+
 
 /* ==========================================================================
    common - BG
@@ -1408,15 +1544,355 @@ html, body { min-height:100%; }
 	
 
 /* ==========================================================================
+   comp - UL.LINKS
+   ========================================================================== */
+	 
+/* common */
+ul.links,
+ul.links li { 
+	position:relative; width:auto; height:auto; margin:0; padding:0;
+	color:#777; list-style:none; font-size:inherit; }
+	
+	/* item */
+	ul.links li { 
+		margin:0 0 0.25em 0; padding-left:1em;
+		font-size:1em; font-weight:900; line-height:1.25em; }
+		
+		/* icon */
+		ul.links li .icon { left:0; height:1.25em; color:#09a3cf; vertical-align:middle; }
+		ul.links li .icon:before { font-size:1em; line-height:1.3em; }
+		
+		/* a */
+		ul.links li a { color:#777; text-decoration:none; }
+		ul.links li a:hover,
+		ul.links li a:focus,
+		ul.links li a:active { text-decoration:underline; }
+
+
+/* ==========================================================================
    section - HOME
    ========================================================================== */
 
+/* -------------------------------------------------------------------------- */
+/* heading */
+#home .section > .padder > .heading { 
+	margin:4% 0;
+	color:#444; font-family:'PT Serif',serif; font-size:40px; line-height:1em; font-weight:400; }
+	
+/* responsive */
+@media only screen and (max-width:500px) {
+	
+	/* shrink size */
+	#home .section > .padder > .heading { font-size:32px; }
+
+}
 
 
-/* home stuff ... */
+/* ==========================================================================
+   section - HOME - BANNER
+   ========================================================================== */
 
- 
-   
+/* -------------------------------------------------------------------------- */
+/* container */
+#banner.hasSlideshow { 
+	padding-top:40%;/*480/1200*/ }
+	
+	/* slide (override cycle) */
+	#banner.hasSlideshow .bgImg { 
+		top:0!important; left:0!important; width:100%!important; height:auto!important; }
+		
+	/* -------------------------------------------------------------------------- */
+	/* info */
+	#banner.hasSlideshow .info { 
+		position:absolute; top:0; right:0; width:35%; height:100%; margin:0; padding:3.5%; overflow:hidden; z-index:10;
+		color:#fff; background:rgba(0,0,0,0.7); font-size:16px; line-height:1.375em; 
+		/*box-sizing*/-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }
+	.oldie #banner.hasSlideshow .info { background:#222; }
+	.ie7 #banner.hasSlideshow .info { width:28%; height:314px; margin:0; padding:35px; }
+	
+		/* title */
+		#banner.hasSlideshow .info .title { 
+			margin:0; padding:0; max-height:3.6em;/* 3 lines */ overflow:hidden;
+			font-family:'PT serif',serif; font-size:2.5em; line-height:1.2em; font-weight:400; }
+		
+		/* detail */
+		#banner.hasSlideshow .info .detail { 
+			margin:1em 0 0 0; padding:0; max-height:4.125em;/* 3 lines */ overflow:hidden; }
+		
+		/* a */
+		#banner.hasSlideshow .info a { 
+			margin:2em 0 0 0; }
+		
+	/* -------------------------------------------------------------------------- */
+	/* control */
+	#banner.hasSlideshow .controls { 
+		position:absolute; right:0; bottom:0; width:28%; height:20px; margin:20px 3.5%; padding:0; overflow:hidden; z-index:11; }
+		
+		/* btnNav */
+		#banner.hasSlideshow .controls .btnNav { display:none!important; }
+		
+		/* pagination */
+		#banner.hasSlideshow .controls .pager { text-align:left; } 
+			
+			/* btnSlide */
+			#banner.hasSlideshow .controls .btnSlide { 
+				display:inline-block; width:12px; height:12px; margin:4px; padding:0; overflow:hidden;
+				background:#bcbbb9; font-size:0; line-height:12px;
+				/*border-radius*/-webkit-border-radius:50%; border-radius:50%;
+				/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box; }
+				#banner.hasSlideshow .controls .btnSlide span { display:none!important; }
+				
+			/* interaction */
+			.no-touch #banner.hasSlideshow .controls .btnSlide:hover,
+			.no-touch #banner.hasSlideshow .controls .btnSlide:focus,
+			.touch #banner.hasSlideshow .controls .btnSlide:active { background:#f2f2f2; }
+				
+			/* btnSlide.activeSlide */
+			#banner.hasSlideshow .controls .btnSlide.activeSlide,
+			#banner.hasSlideshow .controls .btnSlide.activeSlide:hover,
+			#banner.hasSlideshow .controls .btnSlide.activeSlide:focus,
+			#banner.hasSlideshow .controls .btnSlide.activeSlide:active {
+				background:#ffc423; cursor:default; pointer-events:none; outline:0 none; } 
+
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:960px) {
+	
+	/* shrink text */
+	#banner.hasSlideshow .info { font-size:14px; }
+
+}
+@media only screen and (max-width:900px) {
+
+	/* shrink text */
+	#banner.hasSlideshow .info { font-size:12px; }
+	
+	/* hide detail */
+	#banner.hasSlideshow .info .detail { display:none!important; }
+
+}
+@media only screen and (max-width:800px) {
+	
+	/* move info to another row */
+	#banner.hasSlideshow .info { 
+		position:relative; top:auto; right:auto; width:100%; height:auto; margin:0; padding:3.5%;
+		background:#026282; }
+		
+		/* title */
+		#banner.hasSlideshow .info .title { max-height:none; }
+		
+		/* a */
+		#banner.hasSlideshow .info a { margin-top:1.5em; }
+	
+	/* widen controls */
+	#banner.hasSlideshow .controls { width:45%; }
+		
+		/* btnSlide align right */
+		#banner.hasSlideshow .controls .pager { text-align:right; } 
+	
+}
+@media only screen and (max-width:640px) {
+
+	/* title */
+	#banner.hasSlideshow .info .title { font-size:2em; }
+
+}
+@media only screen and (max-width:500px) {
+	
+	/* adjust padding */
+	#banner.hasSlideshow .info { padding:5%; }
+	
+		/* shrink text */
+		#banner.hasSlideshow .info .title { font-size:1.6em; }
+		
+	/* adjust controls */
+	#banner.hasSlideshow .controls { width:45%; margin:20px 5%; }
+
+}
+
+
+/* ==========================================================================
+   section - HOME - INTRO
+   ========================================================================== */
+
+/* padder */
+#home #intro > .padder { padding:3% 0; }
+
+	/* -------------------------------------------------------------------------- */
+	/* welcome */
+	#home #intro .welcome { 
+		width:60%; max-width:600px; height:auto; margin:0; padding:0; overflow:hidden; float:left; clear:left;
+		color:#38424b; font-size:18px; line-height:24px; }
+	
+		/* content */
+		#home #intro .welcome h1,
+		#home #intro .welcome p { margin:0 0 0 25px; padding:0; }
+		#home #intro .welcome h1 { padding:0.5em 0; color:#09a3cf; font-size:1.33em; font-weight:900; }
+		
+	/* -------------------------------------------------------------------------- */
+	/* profile */
+	#home #intro .profile { 
+		width:300px; height:auto; margin:0 6.5% 0 0; padding:0; overflow:hidden; float:right; clear:right;
+		color:#38424b; font-size:18px; line-height:24px; }
+
+		/* imgThumb */
+		#home #intro .profile .imgThumb,
+		#home #intro .profile .imgThumb > img { 
+			/*border-radius*/-webkit-border-radius:50%; border-radius:50%;
+			/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box; }
+		#home #intro .profile .imgThumb { 
+			overflow:hidden; float:left; clear:left;
+		 	border:1px solid #d7d8da; }
+			#home #intro .profile .imgThumb > img { 
+				width:130px; height:130px; border:3px solid #fff; }
+				
+		/* content */
+		#home #intro .profile > .padder { 
+			width:150px; float:right; clear:right;
+			font-size:14px; }
+			
+			/* title */
+			#home #intro .profile > .padder .title { 
+				margin:1.9em 0 0 0; color:#09a3cf; font-size:1.28em; line-height:1.8em; font-weight:900; }
+
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:960px) {
+
+	/* shrink horz spacing */
+	#home #intro .welcome { width:55%; }	
+	#home #intro .profile { margin-right:25px; }
+
+}
+@media only screen and (max-width:800px) {
+	
+	/* shrink profile */
+	#home #intro .welcome { width:70%; }	
+	#home #intro .profile { width:140px; }
+	#home #intro .profile > .padder { width:auto; float:none; clear:both; }
+	#home #intro .profile .imgThumb { margin:0 auto; }
+
+}
+@media only screen and (max-width:640px) {
+
+	/* shrink welcome */
+	#home #intro .welcome { width:62%; }
+
+}
+@media only screen and (max-width:500px) {
+
+	/* move to rows */
+	#home #intro .welcome { width:auto; margin:0 20px; float:none; clear:both; }
+	#home #intro .welcome h1,
+	#home #intro .welcome p { margin:0; }
+	#home #intro .profile { margin:15px auto; float:none; clear:both; }
+
+}
+
+
+/* ==========================================================================
+   section - HOME - FORMS
+   ========================================================================== */
+	 
+/* -------------------------------------------------------------------------- */
+/* common */
+.padder.wide.form { padding:3% 0; min-height:40px; }
+
+
+
+/* details to be done ... */
+	 
+	 
+
+/* ==========================================================================
+   section - HOME - ACTIONS
+   ========================================================================== */
+	 
+/* -------------------------------------------------------------------------- */
+/* actions */
+#home #actions > .padder.actions { 
+	padding-bottom:50px; text-align:center; }
+	
+	/* btnAction */
+	#home #actions .btnAction { min-width:11em; }
+	.oldie #home #actions .btnAction { min-width:9.75em; }
+
+/* responsive */
+@media only screen and (max-width:500px) {
+	
+	/* reduce bottom gap */
+	#home #actions > .padder.actions { padding-bottom:3%; }
+	
+	/* btnAction stacking */
+	#home #actions .btnAction { display:block; margin:0 5% 5px 5%; }
+
+}
+
+
+/* ==========================================================================
+   section - HOME - APPS
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* container */
+#home #apps { background:url(../img/bg-apps.jpg) center center no-repeat; background-size:cover; }
+.oldie #home #apps { background:#2f8192; }
+
+	/* -------------------------------------------------------------------------- */
+	/* content */
+	#home #apps .content { 
+		width:330px; margin:0; padding:10% 0 8% 0; 
+	 	color:#fff; }
+		
+		/* heading */
+		#home #apps .content .heading { margin:0 0 0.5em 0; font-family:'PT Serif', serif; font-size:44px; font-weight:400; }
+		
+		/* p */
+		#home #apps .content p { margin:0 0 1.5em 0; font-size:16px; line-height:22px; }
+		
+		/* a */
+		#home #apps .content a { display:inline-block; margin:0 4px 0 0; }
+		
+	/* -------------------------------------------------------------------------- */
+	/* bgPhone */
+	#home #apps .bgPhone { 
+		display:block; position:absolute; bottom:0; right:6%; width:38.6%; max-width:280px; height:auto; }
+		
+/* -------------------------------------------------------------------------- */
+/* responsive */
+@media only screen and (max-width:800px) {
+	
+	/* content left gap */
+	#home #apps .content { margin-left:5%; }
+	
+	/* shrink bgPhone */
+	#home #apps .bgPhone { width:34%; }
+
+}
+@media only screen and (max-width:640px) {
+
+	/* center content */
+	#home #apps .content { margin:0 auto; text-align:center; }
+	#home #apps .content a { margin:0 2px; }
+	
+	/* hide bgPhone */
+	#home #apps .bgPhone { display:none; }
+
+}
+@media only screen and (max-width:500px) {
+	
+	/* adjust side gaps */
+	#home #apps .content { width:auto; margin:0 5%; }
+	
+	/* shrink heading */
+	#home #apps .content .heading { font-size:32px; }
+	
+	/* stacking button */
+	#home #apps .content a { display:block; margin:0 auto 8px auto; }
+
+}
+
+	
 /* ==========================================================================
    Common Styles
    Author: JX 20120127
@@ -1427,7 +1903,7 @@ html, body { min-height:100%; }
 .txtUpperCase       { text-transform:uppercase!important; }
 .txtLowerCase       { text-transform:lowercase!important; }
 .txtNormal	      	{ font-weight:normal!important; }
-.txtBold	      	{ font-weight:bold!important; }
+.txtBold	      		{ font-weight:bold!important; }
 
 /* -------------------------------------------------------------------------- */
 /* layout */
@@ -1437,11 +1913,11 @@ html, body { min-height:100%; }
 
 .mcenter            { margin-left:auto!important; margin-right:auto!important; }
 .acenter            { text-align:center!important; }
-.aleft  	        { text-align:left!important; }
-.aright	    	    { text-align:right!important; }
+.aleft  	        	{ text-align:left!important; }
+.aright	    	    	{ text-align:right!important; }
 
-.whitespaceNowrap	{ white-space:nowrap!important; }
-.whitespaceNormal	{ white-space:normal!important; }
+.whitespaceNowrap		{ white-space:nowrap!important; }
+.whitespaceNormal		{ white-space:normal!important; }
 
 .dispInline         { display:inline!important; }
 .dispInlineBlock    { display:inline-block!important; }
@@ -1458,30 +1934,30 @@ html, body { min-height:100%; }
 .cright             { clear:right!important; }
 .cboth              { clear:both!important; }
 
-.bgNone				{ background:none!important; }
-.bgColorNone		{ background-color:none!important; }
-.bgImgNone			{ background-image:none!important; }
+.bgNone							{ background:none!important; }
+.bgColorNone				{ background-color:none!important; }
+.bgImgNone					{ background-image:none!important; }
 
-.bdrNone			{ border:none!important; }
-.bdrTopNone			{ border-top:none!important; }
-.bdrBtmNone			{ border-bottom:none!important; }
-.bdrLftNone			{ border-left:none!important; }
-.bdrRgtNone			{ border-right:none!important; }
+.bdrNone						{ border:none!important; }
+.bdrTopNone					{ border-top:none!important; }
+.bdrBtmNone					{ border-bottom:none!important; }
+.bdrLftNone					{ border-left:none!important; }
+.bdrRgtNone					{ border-right:none!important; }
 
 /* -------------------------------------------------------------------------- */
 /* margin */
-.mgnNone            { margin:0!important; }
+.mgnNone           	{ margin:0!important; }
 
-.-mgnTop5            { margin-top:-5px!important; }
-.-mgnTop10           { margin-top:-10px!important; }
-.-mgnTop15           { margin-top:-15px!important; }
-.-mgnTop20           { margin-top:-20px!important; }
-.-mgnTop25           { margin-top:-25px!important; }
-.-mgnTop30           { margin-top:-30px!important; }
-.-mgnTop35           { margin-top:-35px!important; }
-.-mgnTop40           { margin-top:-40px!important; }
-.-mgnTop45           { margin-top:-45px!important; }
-.-mgnTop50           { margin-top:-50px!important; }
+.-mgnTop5           { margin-top:-5px!important; }
+.-mgnTop10          { margin-top:-10px!important; }
+.-mgnTop15          { margin-top:-15px!important; }
+.-mgnTop20          { margin-top:-20px!important; }
+.-mgnTop25          { margin-top:-25px!important; }
+.-mgnTop30          { margin-top:-30px!important; }
+.-mgnTop35          { margin-top:-35px!important; }
+.-mgnTop40          { margin-top:-40px!important; }
+.-mgnTop45          { margin-top:-45px!important; }
+.-mgnTop50          { margin-top:-50px!important; }
 
 .mgnTop0            { margin-top:0px!important; }
 .mgnTop5            { margin-top:5px!important; }

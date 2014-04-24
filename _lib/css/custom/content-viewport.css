@@ -376,7 +376,7 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 /* -------------------------------------------------------------------------- */
 /* btnText */
 .btnText { 
-	display:inline-block; position:relative; margin:0 16px 16px 0; padding:0; width:auto; height:24px; vertical-align:middle;
+	display:inline-block; position:relative; margin:0 18px 18px 0; padding:0; width:auto; height:26px; vertical-align:middle;
 	text-decoration:none!important; outline:0 none!important; cursor:pointer; }
 .btnText:hover,
 .btnText:focus,
@@ -387,7 +387,7 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 	.btnText,
 	.btnText .label { 
 		overflow:hidden; white-space:nowrap; text-overflow:ellipsis; vertical-align:middle;
-		color:#06afbc; font-size:15px; font-weight:700; line-height:24px;
+		color:#09a3cf; font-size:18px; font-weight:900; line-height:26px;
 		/*transition*/
 		/*-webkit-transform:translate3d(0,0,0);*/
 		-webkit-transition:color 0.3s ease-in-out;
@@ -397,7 +397,7 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 	.btnText:hover .label,
 	.btnText:focus .label,
 	.btnText:active .label { 
-		text-decoration:underline!important; }
+		color:#39bce2; text-decoration:underline!important; }
 		
 	/* icon */
 	.btnText .icon,
@@ -406,30 +406,45 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 	.ie7 .btnText .icon,
 	.ie7 .btnText .iconInline,
 	.btnText .icon:before,
-	.btnText .iconInline:before	{ font-size:14px; line-height:24px; }	
+	.btnText .iconInline:before	{ font-size:18px; line-height:26px; }	
 
 /* -------------------------------------------------------------------------- */
-/* extend slim */
-.btnText.slim,
-.btnText.slim .label { font-weight:400; }
+/* extend */
+h1 > .btnText,
+h2 > .btnText,
+h3 > .btnText,
+h4 > .btnText,
+h5 > .btnText,
+p > .btnText,
+li > .btnText,
+span > .btnText { margin:0; vertical-align:text-top; }
+
+/* -------------------------------------------------------------------------- */
+/* btnText.highlight */
+.btnText.highlight,
+.btnText.highlight .label { color:#ffc423; }
+.btnText.highlight:hover .label,
+.btnText.highlight:focus .label,
+.btnText.highlight:active .label { color:#ffd665; }
 
 /* -------------------------------------------------------------------------- */
 /* btnBox */
 .btnBox { 
-	display:inline-block; position:relative; width:auto; height:auto; margin:0 16px 16px 0; padding:0 40px; overflow:hidden;
-	background:#1f353f; white-space:nowrap; text-overflow:ellipsis;
+	display:inline-block; position:relative; width:auto; height:auto; margin:0 18px 18px 0; padding:0 20px; overflow:hidden;
+	background:#09a3cf; white-space:nowrap; text-overflow:ellipsis;
 	text-decoration:none!important; outline:0 none!important; cursor:pointer;
-	/*box-shadow*/-webkit-box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); box-shadow:1px 1px 1px 0px rgba(0,0,0,0.15); }
+	/*border-radius*/-webkit-border-radius:3px; border-radius:3px;
+	/*background-clip*/-moz-background-clip:padding; -webkit-background-clip:padding; background-clip:padding-box; }
 .btnBox:hover,
 .btnBox:focus,
 .btnBox:active { 
-	background:#06bbca; text-decoration:none!important; }
+	background:#39bce2; text-decoration:none!important; }
 
 	/* label */
 	.btnBox,
 	.btnBox .label { 
-		color:#fff!important; text-align:center; vertical-align:middle;
-		font-family:'Montserrat',sans-serif; font-weight:400; font-size:16px; line-height:50px; }	
+		color:#fff!important; text-align:center; vertical-align:middle; text-transform:uppercase;
+		font-family:'Roboto',sans-serif; font-weight:900; font-size:14px; line-height:40px; }	
 	.btnBox:hover .label,
 	.btnBox:focus .label,
 	.btnBox:active .label { 
@@ -442,20 +457,14 @@ body.ps, .contentViewport { color:#222; font-family:'Roboto',sans-serif; font-si
 	.ie7 .btnBox .icon,
 	.ie7 .btnBox .iconInline,
 	.btnBox .icon:before,
-	.btnBox .iconInline:before 	{ font-size:16px; line-height:50px; }	
-
-/* -------------------------------------------------------------------------- */
-/* btnBox.compact */
-.btnBox.compact 		{ padding:0 20px; }
-.btnBox.compact,
-.btnBox.compact .label 	{ font-size:14px; line-height:35px; }
+	.btnBox .iconInline:before 	{ font-size:14px; line-height:40px; }	
 
 /* -------------------------------------------------------------------------- */
 /* btnBox.highlight */
-.btnBox.highlight 		 { background:#06bbca; }
+.btnBox.highlight 		 { background:#ffc423; }
 .btnBox.highlight:hover,
 .btnBox.highlight:focus,
-.btnBox.highlight:active { background:#1f353f; }
+.btnBox.highlight:active { background:#ffd665; }
 
 
 /* ==========================================================================
